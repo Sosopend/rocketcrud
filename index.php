@@ -26,7 +26,7 @@
 
     <?php endif; 
     require_once("./html_base/footer.php");
-    ?>
+    
 
     if($conn):?>
         <h1>Connection à la BDD réussie!</h1>

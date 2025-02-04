@@ -23,7 +23,7 @@
             <h2><?php echo $value["nom"]; ?></h2>
             <ul>
                 <li><?php echo "<strong>Date</strong> : " . $value["creation"] ?></li>
-                <li><?php echo "<strong>Nombe de victoire Worlds</strong> : " . $value["v.champ"] ?></li>
+                <li><?php echo "<strong>Nombe de victoire Worlds</strong> : " . $value["vchamp"] ?></li>
                 <li><?php echo "<strong>Pays</strong> : " . $value["pays"] ?></li>
             </ul>
             <hr>

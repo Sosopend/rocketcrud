@@ -1,9 +1,4 @@
-<<<<<<< HEAD
     <?php
-=======
-
-<?php
->>>>>>> 43cd961b3dfad0ecb553f5ceb6e2db5b3c306e05
     require_once("./html_base/header.php");
     require_once("./dbconnect.php");
 
@@ -25,23 +20,6 @@
             <hr>
     <?php
         endforeach;
-<<<<<<< HEAD
     endif;
     require_once("./html_base/footer.php");
     ?>
-=======
-        ?>
-        <a href="http://cours-php.test/rocket/rocketcrud/form-ajout.php">Ajouter un club</a>
-
-    <?php endif; 
-    require_once("./html_base/footer.php");
-    
-
-    if($conn):?>
-        <h1>Connection à la BDD réussie!</h1>
-        <a href="http://cours-php.test/rocket/rocketcrud/form-ajout.php">Ajouter un club</a>
-        
-<?php endif;?>
-
-
->>>>>>> 43cd961b3dfad0ecb553f5ceb6e2db5b3c306e05

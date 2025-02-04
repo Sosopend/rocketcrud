@@ -30,6 +30,7 @@
         <?php
         endforeach; ?>
         <a href="http://cours-php.test/rocket/rocketcrud/form-ajout.php">Ajouter un club</a>
+        </div>
     <?php endif;
     require_once("./html_base/footer.php");
     ?>

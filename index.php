@@ -26,7 +26,7 @@
                 <input type="hidden" name="identifiant" value="<?php echo $value["id"]; ?>">
                 <input type="submit" value="Supprimer ce club">
             </form>
-            <hr>
+            </div>
         <?php
         endforeach; ?>
         <a href="http://cours-php.test/rocket/rocketcrud/form-ajout.php">Ajouter un club</a>

@@ -17,14 +17,14 @@
                 <li><?php echo "<strong>Nombe de victoire Worlds</strong> : " . $value["vchamp"] ?></li>
                 <li><?php echo "<strong>Pays</strong> : " . $value["pays"] ?></li>
             </ul>
+            <form action="./form-modif.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $value["id"] ?>">
+                <input type="submit" value="Modifier les informations">
+            </form>
             <hr>
         <?php
-        endforeach;
-    endif;
-    if ($conn): ?>
-        <h1>Connection à la BDD réussie!</h1>
+        endforeach; ?>
         <a href="http://cours-php.test/rocket/rocketcrud/form-ajout.php">Ajouter un club</a>
-
     <?php endif;
     require_once("./html_base/footer.php");
     ?>

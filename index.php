@@ -1,4 +1,4 @@
-    <?php
+<?php
     require_once("./html_base/header.php");
     require_once("./dbconnect.php");
     if ($conn): ?>
@@ -19,7 +19,10 @@
             <hr>
     <?php
         endforeach;
-    endif; 
+        ?>
+        <a href="http://cours-php.test/rocket/rocketcrud/form-ajout.php">Ajouter un club</a>
+
+    <?php endif; 
     require_once("./html_base/footer.php");
     ?>
 

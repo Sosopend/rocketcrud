@@ -18,8 +18,8 @@
                 <li><?php echo "<strong>Pays</strong> : " . $value["pays"] ?></li>
             </ul>
             <form action="./delete.php" method="post">
-                <input type="hidden" name="identifiant" value="<?php echo $user["id"]; ?>">
-                <button type="submit">Supprimer ce club</button>
+                <input type="hidden" name="identifiant" value="<?php echo $value["id"]; ?>">
+                <input type="submit" $value="Supprimer ce club">
             </form>
             <hr>
         <?php

@@ -20,9 +20,10 @@
             <form action="./form-modif.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $value["id"] ?>">
                 <input type="submit" value="Modifier les informations">
+            </form>
             <form action="./delete.php" method="post">
-                <input type="hidden" name="identifiant" value="<?php echo $user["id"]; ?>">
-                <button type="submit">Supprimer ce club</button>
+                <input type="hidden" name="identifiant" value="<?php echo $value["id"]; ?>">
+                <input type="submit" value="Supprimer ce club">
             </form>
             <hr>
         <?php

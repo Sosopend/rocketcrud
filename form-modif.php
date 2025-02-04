@@ -6,7 +6,7 @@ if ($conn):
     $requeteFind = "SELECT * FROM clubs WHERE id = $prodId";
     $exec = $conn->query($requeteFind);
     $result = $exec->fetch(PDO::FETCH_ASSOC);
-    var_dump($result);
+    // var_dump($result);
 ?>
     <form action="./modif.php" method="post">
         <input type="text" name="nom" value="<?php echo $result["nom"] ?>">

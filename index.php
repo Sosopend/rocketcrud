@@ -32,6 +32,9 @@
         <h1>Connection à la BDD réussie!</h1>
         <a href="http://cours-php.test/rocket/rocketcrud/form-ajout.php">Ajouter un club</a>
         
+
+
+        
 <?php endif;?>
 
 

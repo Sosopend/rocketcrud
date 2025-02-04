@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base de données users</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
     <?php
+    require_once("./html_base/header.php");
     require_once("./dbconnect.php");
     if ($conn): ?>
         <h1>Connexion à la BDD réussie!</h1>
@@ -29,8 +19,7 @@
             <hr>
     <?php
         endforeach;
-    endif; ?>
+    endif; 
+    require_once("./html_base/footer.php");
+    ?>
 
-</body>
-
-</html>

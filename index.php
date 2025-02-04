@@ -18,8 +18,13 @@
                 <li><?php echo "<strong>Pays</strong> : " . $value["pays"] ?></li>
             </ul>
             <hr>
-    <?php
+        <?php
         endforeach;
     endif;
+    if ($conn): ?>
+        <h1>Connection à la BDD réussie!</h1>
+        <a href="http://cours-php.test/rocket/rocketcrud/form-ajout.php">Ajouter un club</a>
+
+    <?php endif;
     require_once("./html_base/footer.php");
     ?>

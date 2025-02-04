@@ -1,22 +1,15 @@
 <?php
-    require_once("./html_base/header.php");
+   
     require_once("./dbconnect.php");
 
     if ($conn): 
-        <?php
-
-       
     
-    if($conn):
+        $clubsId = $_POST["identifiant"];
     
-        $userId = $_POST["identifiant"];
-    
-        
-        $requete = "DELETE FROM clubs WHERE id = $";
-    
-        
+       $requete = "DELETE FROM clubs WHERE id = $clubsId";
         $exec = $conn->query($requete);
     ?>
     
-    <?php endif; ?>
+    <?php endif;
     ?>
+    

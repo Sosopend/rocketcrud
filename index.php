@@ -17,6 +17,10 @@
                 <li><?php echo "<strong>Nombe de victoire Worlds</strong> : " . $value["vchamp"] ?></li>
                 <li><?php echo "<strong>Pays</strong> : " . $value["pays"] ?></li>
             </ul>
+            <form action="./delete.php" method="post">
+                <input type="hidden" name="identifiant" value="<?php echo $user["id"]; ?>">
+                <button type="submit">Supprimer ce club</button>
+            </form>
             <hr>
         <?php
         endforeach;

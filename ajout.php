@@ -18,24 +18,18 @@
 
 <?php // Requete d'ajout d'un produit
         if (!empty($_POST["nom"]) && !empty($_POST["creation"]) && !empty($_POST["vchamp"]) && !empty($_POST["pays"])):
-            $requete = "INSERT INTO clubs (nom, creation, vchamp, pays) VALUES ('$nom', '$creation', $vchamp, '$pays')";
+            $creation = (int)$_POST['creation'];
+            $requete = "INSERT INTO clubs (nom, creation, vchamp, pays) VALUES ('$nom', $creation, $vchamp, '$pays')";
             // executer et stocker  la requête
             $exec = $conn->query($requete);
-            if ($exec): ?>
+            if ($exec): header("Refresh: 0; URL=http://cours-php.test/rocket/rocketcrud/index.php");
+                else: header("Refresh: 0; URL=http://cours-php.test/rocket/rocketcrud/index.php");
+                endif; 
+            else:
+                header("Refresh: 0; URL=http://cours-php.test/rocket/rocketcrud/index.php");
 
-            <h2>Club ajouté avec succès</h2>
-                <?php header("Refresh: 5; URL=http://cours-php.test/rocket/rocketcrud/index.php");
-                exit; ?>
-            <?php else: ?>
-                <h2>Erreur lors de l'ajout du Club</h2>
-                <?php header("Refresh: 5; URL=http://cours-php.test/rocket/rocketcrud/index.php");
-                exit; ?>
-            <?php endif; ?>
-            <?php else:
-                header("Refresh: 5; URL=http://cours-php.test/rocket/rocketcrud/index.php");
-
+        endif;
         endif; ?>
-    <?php endif; ?>
 
 </body>
 </html>

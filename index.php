@@ -1,4 +1,9 @@
     <?php
+    /*
+    Karl: Création de la requête ajout, travail des redirections, début du CSS
+    Sofiane: Création de la DB, repo Github, Création de la requête update, Participation à la création de la requête read
+    Bachir: Participation à la requête read, Création de la requête delete, Création de HTML BASE, Création de dbconnect
+    */ 
     require_once("./html_base/header.php");
     require_once("./dbconnect.php");
 

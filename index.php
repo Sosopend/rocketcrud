@@ -22,12 +22,14 @@
                 <input type="hidden" name="id" value="<?php echo $value["id"] ?>">
                 <input type="submit" value="Modifier les informations">
             </form>
-            </div>
+            <form action="./delete.php" method="post">
+                <input type="hidden" name="identifiant" value="<?php echo $value["id"]; ?>">
+                <input type="submit" value="Supprimer ce club">
+            </form>
+            <hr>
         <?php
-        endforeach;?>
-        </div>
+        endforeach; ?>
         <a href="http://cours-php.test/rocket/rocketcrud/form-ajout.php">Ajouter un club</a>
-
     <?php endif;
     require_once("./html_base/footer.php");
     ?>

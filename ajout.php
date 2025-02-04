@@ -18,7 +18,7 @@
 
 <?php // Requete d'ajout d'un produit
         if (!empty($_POST["nom"]) && !empty($_POST["creation"]) && !empty($_POST["vchamp"]) && !empty($_POST["pays"])):
-            $requete = "INSERT INTO clubs (nom, creation, vchamp, pays) VALUES ('$nom', '$creation', '$vchamp', '$pays')";
+            $requete = "INSERT INTO clubs (nom, creation, vchamp, pays) VALUES ('$nom', '$creation', $vchamp, '$pays')";
             // executer et stocker  la requête
             $exec = $conn->query($requete);
             if ($exec): ?>

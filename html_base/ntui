@@ -1,0 +1,21 @@
+<?php
+
+    // protection des failles SQL et XSS via html special chars
+   $pays = htmlspecialchars($_POST["pays"]);
+    
+
+$pattern = "/^[A-Z]*$/";
+
+
+    // Contrôle d'intégrité total du "pays"
+    // si le form contient le champ "pays",  le champ "pays" n'est pas vide, le champ "pays" contient uniquement des caractères majuscule, min 2 caractères et max 3
+    if(isset($pays) && !empty(trim($pays)) && preg_match($pattern, $pays) && strlen($pays) > 1 && strlen($pays) < 4):
+        echo "Le pays est correct !";
+    else:
+        // C'est ici qu'il faudrait réaliser des tests complémentaires afin de déterminer ce qui ne va pas sur le pays.
+        echo "Le pays n'est pas correct !";
+    endif;
+
+   
+    
+?>

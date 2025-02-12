@@ -1,0 +1,17 @@
+body{
+    background-color: beige;
+}
+.club{
+    border: solid black 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+a{
+    text-decoration: none;
+    background-color: white;
+    padding: 5px;
+    color: black;
+    border-radius: 10px;
+}

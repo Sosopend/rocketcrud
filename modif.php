@@ -9,5 +9,8 @@ require_once("./dbconnect.php");
 if ($conn):
     $requete = "UPDATE clubs SET nom = '$nom', creation = $creation, vchamp = $victoire, pays = '$pays' WHERE id = $prodId";
     $exec = $conn->query($requete);
+    if ($exec):
+        header("Refresh: 0; URL=http://cours-php.test/rocket/rocketcrud/index.php");
+    endif;
 endif;
 ?>

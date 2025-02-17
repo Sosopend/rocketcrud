@@ -17,7 +17,6 @@
     $errors = [];
     $creation = htmlspecialchars($_POST['creation']);
     $creapattern = "/^(200\d|201\d|202[0-5])$/";
-    $patternvchamp = "/^[0-9]\d*$/";
     $patternpays = "/^[A-Z]{1,3}$/";
     $vchamp = htmlspecialchars($_POST['vchamp']);
     $pays = htmlspecialchars($_POST['pays']);
@@ -63,9 +62,9 @@
         //     if (strlen($creation) != 4):
         //         $errors["creation"] .= "le champs creation doit contenir 4 chiffres, ";
         //     endif;
-        // endif;
+        endif;
 
-        if (empty(trim($vchamp)) || !isset($vchamp) || !preg_match($patternvchamp, $vchamp)):
+        if (empty(trim($vchamp)) || !isset($vchamp) || $vchamp < 0):
             $errors["vchamp"]= "Le champs vchamp n'est pas valide";
 
             //$errors["vchamp"] = "";
@@ -105,8 +104,9 @@
 
 
         if (empty($errors)):
-            $creation = htmlspecialchars($_POST['creation']);
-            $vchamp = htmlspecialchars($_POST['vchamp']);
+            $hash = password_hash($pays, PASSWORD_ARGON2ID);
+            echo $hash;
+
             $requete = "INSERT INTO clubs (nom, creation, vchamp, pays) VALUES (:nom, :creation, :vchamp, :pays)";
             //prepa de la requete
             $stmt = $conn->prepare($requete);
@@ -114,7 +114,7 @@
             $stmt->bindParam(':creation', $creation);
             $stmt->bindParam(':vchamp', $vchamp);
             $stmt->bindParam(':nom', $nom);
-            $stmt->bindParam(':pays', $pays);
+            $stmt->bindParam(':pays', $hash);
 
             // executer et stocker  la requête
             $exec = $stmt->execute();
@@ -126,8 +126,7 @@
         <?php
             endforeach;
         endif;
-    endif;
-endif;?> 
+    endif;?> 
 </body>
 
 </html>

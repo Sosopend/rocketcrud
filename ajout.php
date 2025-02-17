@@ -18,7 +18,7 @@
     $creation = htmlspecialchars($_POST['creation']);
     $creapattern = "/^(200\d|201\d|202[0-5])$/";
     $patternpays = "/^[A-Z]{1,3}$/";
-    $vchamp = htmlspecialchars($_POST['vchamp']);
+    $vchamp = intval($_POST['vchamp']);
     $pays = htmlspecialchars($_POST['pays']);
     if ($conn): ?>
         <h1>Connection à la BDD réussie</h1>
@@ -64,7 +64,11 @@
         //     endif;
         endif;
 
+        
         if (empty(trim($vchamp)) || !isset($vchamp) || $vchamp < 0):
+            
+            
+            var_dump($vchamp);
             $errors["vchamp"]= "Le champs vchamp n'est pas valide";
 
             //$errors["vchamp"] = "";

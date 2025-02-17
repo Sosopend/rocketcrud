@@ -63,7 +63,7 @@
         //     if (strlen($creation) != 4):
         //         $errors["creation"] .= "le champs creation doit contenir 4 chiffres, ";
         //     endif;
-        // endif;
+        endif;
 
         if (empty(trim($vchamp)) || !isset($vchamp) || !preg_match($patternvchamp, $vchamp)):
             $errors["vchamp"]= "Le champs vchamp n'est pas valide";

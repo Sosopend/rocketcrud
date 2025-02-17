@@ -1,15 +1,15 @@
 <?php
 // var_dump($_POST);
-$nom = isset($_POST['nom']) ? htmlspecialchars($_POST['nom']) : '';
+$nom = htmlspecialchars($_POST['nom']);
 $nomPattern = "/^[a-zA-Z0-9]+$/";
 $errors = [];
-$creation = isset($_POST['creation']) ? htmlspecialchars($_POST['creation']) : '';
+$creation = htmlspecialchars($_POST['creation']);
 $creapattern = "/^(200\d|201\d|202[0-5])$/";
 $patternvchamp = "/^[0-9]\d*$/";
 $patternpays = "/^[A-Z]{1,3}$/";
-$vchamp = isset($_POST['vchamp']) ? htmlspecialchars($_POST['vchamp']) : '';
-$pays = isset($_POST['pays']) ? htmlspecialchars($_POST['pays']) : '';
-$prodId = isset($_POST["id"]) ? $_POST["id"] : '';
+$vchamp = htmlspecialchars($_POST['vchamp']);
+$pays = htmlspecialchars($_POST['pays']);
+$prodId = $_POST["id"];
 require_once("./dbconnect.php");
 if ($conn):
 ?>

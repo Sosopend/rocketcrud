@@ -83,7 +83,7 @@
             //binder les valeurs
             $stmt->bindParam(':creation', $creation);
             $stmt->bindParam(':vchamp', $vchamp);
-            $stmt->bindParam('nom', $nom);
+            $stmt->bindParam(':nom', $nom);
             // executer et stocker  la requête
             $exec = $stmt->execute();
             header("Refresh: 5; URL=http://cours-php.test/rocket/rocketcrud/index.php");

@@ -27,6 +27,7 @@
     <?php
         // Il faut tester toutes les conditions d'un coup puis faire du cas par cas
         if (!isset($nom) || empty(trim($nom)) || !preg_match($nomPattern, $nom) || strlen($nom) < 2 || strlen($nom) > 255):
+
             $errors["nom"] = "";
 
             if (!isset($nom)):
@@ -39,7 +40,7 @@
                 $errors["nom"] = "Le nom du club n'est pas valide, ";
             endif;
             if (strlen($nom) <= 1):
-                $errors["nom"] = "Le nom du club doit contenir au moins 2 caractère, ";
+                $errors["nom"] = "Le nom du club doit contenir au moins 2 caractères, ";
             endif;
             if (strlen($nom) >= 256):
                 $errors["nom"] = "Le nom du club ne peut pas contenir plus de 255 caractères, ";
@@ -47,56 +48,59 @@
         endif;
 
         if (empty(trim($creation)) || !isset($creation) || !preg_match($creapattern, $creation) || strlen($creation) != 4):
-            $errors["creation"] = "";
+            $errors["creation"]= "Le champs creation n'est pas valide";
 
-            if (empty(trim($creation))):
-                $errors["creation"] .= "le champs creation n'est pas renseigné, ";
-            endif;
-            if (!isset($creation)):
-                $errors["creation"] .= "le champs creation est vide, ";
-            endif;
-            if (!preg_match($creapattern, $creation)):
-                $errors["creation"] .= "le champs creation n'est pas valide, ";
-            endif;
-            if (strlen($creation) != 4):
-                $errors["creation"] .= "le champs creation doit contenir 4 chiffres, ";
-            endif;
-        endif;
+        //$errors["creation"] = "";
+        //     if (empty(trim($creation))):
+        //         $errors["creation"] .= "le champs creation n'est pas renseigné, ";
+        //     endif;
+        //     if (!isset($creation)):
+        //         $errors["creation"] .= "le champs creation est vide, ";
+        //     endif;
+        //     if (!preg_match($creapattern, $creation)):
+        //         $errors["creation"] .= "le champs creation n'est pas valide, ";
+        //     endif;
+        //     if (strlen($creation) != 4):
+        //         $errors["creation"] .= "le champs creation doit contenir 4 chiffres, ";
+        //     endif;
+        // endif;
 
         if (empty(trim($vchamp)) || !isset($vchamp) || !preg_match($patternvchamp, $vchamp)):
-            $errors["vchamp"] = "";
+            $errors["vchamp"]= "Le champs vchamp n'est pas valide";
 
-            if (empty(trim($vchamp))):
-                $errors["vchamp"] .= "le champs vchamp n'est pas renseigné, ";
-            endif;
-            if (!isset($vchamp)):
-                $errors["vchamp"] .= "le champs vchamp est vide, ";
-            endif;
-            if (!preg_match($patternvchamp, $vchamp)):
-                $errors["vchamp"] .= "le champs vchamp n'est pas valide, ";
-            endif;
+            //$errors["vchamp"] = "";
+            // if (empty(trim($vchamp))):
+            //     $errors["vchamp"] .= "le champs vchamp n'est pas renseigné, ";
+            // endif;
+            // if (!isset($vchamp)):
+            //     $errors["vchamp"] .= "le champs vchamp est vide, ";
+            // endif;
+            // if (!preg_match($patternvchamp, $vchamp)):
+            //     $errors["vchamp"] .= "le champs vchamp n'est pas valide, ";
+            // endif;
         endif;
         if(!isset($pays) || empty(trim($pays)) || !preg_match($patternpays, $pays) || strlen($pays) < 3 || strlen($pays) > 3):
-            $errors["pays"] = "";
-            if (!isset($pays)):
-                $errors["pays"] .= "le champs pays est vide, ";
-                endif;
-            if (empty(trim($pays))):
-                $errors["pays"] .= "le champs pays n'est pas vide, ";
-                endif;
-            if (!preg_match($patternpays, $pays)):
-                $errors["pays"] .= "le champs pays n'est pas valide, ";
-                endif;
-            if (strlen($pays) < 3):
-                $errors["pays"] .= "le champs pays doit contenir 3 caractères, ";
-                endif;
-            if (strlen($pays) > 3):
-                $errors["pays"] .= "le champs pays doit contenir 3 caractères, ";
-                endif;
-            // verifier si uniquement en maj
-            if (preg_match('/[a-z]/', $pays)):
-                $errors["pays"] .= "le champs pays doit contenir que des MAJ";
-                endif;
+            $errors["pays"]= "Le champs pays n'est pas valide";
+            //$errors["pays"] = "";
+            // if (!isset($pays)):
+            //     $errors["pays"] .= "le champs pays est vide, ";
+            //     endif;
+            // if (empty(trim($pays))):
+            //     $errors["pays"] .= "le champs pays n'est pas vide, ";
+            //     endif;
+            // if (!preg_match($patternpays, $pays)):
+            //     $errors["pays"] .= "le champs pays n'est pas valide, ";
+            //     endif;
+            // if (strlen($pays) < 3):
+            //     $errors["pays"] .= "le champs pays doit contenir 3 caractères, ";
+            //     endif;
+            // if (strlen($pays) > 3):
+            //     $errors["pays"] .= "le champs pays doit contenir 3 caractères, ";
+            //     endif;
+            // // verifier si uniquement en maj
+            // if (preg_match('/[a-z]/', $pays)):
+            //     $errors["pays"] .= "le champs pays doit contenir que des MAJ";
+            //     endif;
             endif;
 
 
@@ -121,7 +125,8 @@
         <?php
             endforeach;
         endif;
-    endif;?> 
+    endif;
+endif;?> 
 </body>
 
 </html>

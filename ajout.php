@@ -65,10 +65,8 @@
         endif;
 
         
-        if (empty(trim($vchamp)) || !isset($vchamp) || $vchamp < 0):
-            
-            
-            var_dump($vchamp);
+        if (!isset($vchamp) || $vchamp < 0):
+
             $errors["vchamp"]= "Le champs vchamp n'est pas valide";
 
             //$errors["vchamp"] = "";

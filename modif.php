@@ -1,4 +1,11 @@
 <?php
+session_start();
+if (empty($_POST)) :
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']):
+    die('Invalid CSRF token');
+    endif;
+else:
+
 // var_dump($_POST);
 $nom = htmlspecialchars($_POST['nom']);
 $nomPattern = "/^[a-zA-Z0-9]+$/";
@@ -127,6 +134,7 @@ if ($conn):
             endforeach;
         endif;
     endif;
+endif;
 $conn = null;
 ?> 
 </body>

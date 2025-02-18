@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (empty($_POST)) :
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']):
+    die('Invalid CSRF token');
+    endif;
+else:
+
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -128,7 +138,8 @@
         <?php
             endforeach;
         endif;
-    endif;?> 
+    endif;
+endif;?> 
 </body>
 
 </html>

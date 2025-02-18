@@ -1,3 +1,8 @@
+<?php
+session_start();
+$token = bin2hex(random_bytes(32));
+$_SESSION['csrf_token'] = $token;
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,6 +19,7 @@
     if($conn):?>
         <h1>Connection à la BDD réussie!</h1>
         <form action="ajout.php" method="post">
+            <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
             <input type="text" name="nom" placeholder="Nom du Club" >
             <input type="number" name="creation" placeholder="Date de création">
             <input type="number" name="vchamp" placeholder="Nombre de victoire Worlds">

@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+$token = bin2hex(random_bytes(32));
+$_SESSION['csrf_token'] = $token;
 require_once("./html_base/header.php");
 require_once("./dbconnect.php");
 $prodId = $_POST["id"];
@@ -9,6 +13,7 @@ if ($conn):
     // var_dump($result);
 ?>
     <form action="./modif.php" method="post">
+    <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
         <input type="text" name="nom" value="<?php echo $result["nom"] ?>">
         <input type="number" name="creation" value="<?php echo $result["creation"] ?>">
         <input type="number" name="vchamp" value="<?php echo $result["vchamp"] ?>">

@@ -64,8 +64,10 @@
         //     endif;
         endif;
 
+
         
         if (!isset($vchamp) || $vchamp < 0):
+
 
             $errors["vchamp"]= "Le champs vchamp n'est pas valide";
 
